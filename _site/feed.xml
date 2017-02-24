@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T13:57:05+08:00</updated><id>http://localhost:4000/</id><title type="html">chaospace</title><subtitle>Chaospace is chaotic.
+</subtitle><entry><title type="html">博客搭建流程</title><link href="http://localhost:4000/log/2017/02/24/blog_building_log.html" rel="alternate" type="text/html" title="博客搭建流程" /><published>2017-02-24T12:55:27+08:00</published><updated>2017-02-24T12:55:27+08:00</updated><id>http://localhost:4000/log/2017/02/24/blog_building_log</id><content type="html" xml:base="http://localhost:4000/log/2017/02/24/blog_building_log.html">&lt;p&gt;一直以来都想建立一个博客，但一拖再拖，现在我终于用jekyll和GitHub Pages搭起了自己的博客。
+现在对大概的流程做一个记录，虽然不太会有人来看…&lt;/p&gt;
+
+&lt;p&gt;搭建流程主要参考了&lt;a href=&quot;http://helldwellercn.github.io/20150910/jekyll/&quot;&gt;使用 Jekyll 和 Github Pages 搭建博客&lt;/a&gt;这篇文章&lt;/p&gt;
+
+&lt;h2 id=&quot;步骤一安装ruby&quot;&gt;步骤一：安装Ruby&lt;/h2&gt;
+&lt;p&gt;前往&lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;Ruby的官网&lt;/a&gt;下载Ruby和Ruby DevKit安装包.
+然后安装Ruby，记得 勾上“Add Ruby executables to your PATH” 以省去配置环境变量。然后
+解压Ruby DevKit,在CMD中cd到该目录，执行&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;步骤二安装jekyll&quot;&gt;步骤二：安装Jekyll&lt;/h2&gt;
+&lt;p&gt;执行&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;可能需要更换安装源，但我并没有遇到这样的问题
+更换方式如下：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rubygems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;taobao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样可以换成淘宝的源。&lt;/p&gt;
+
+&lt;h2 id=&quot;步骤三用jekyll建立博客&quot;&gt;步骤三：用Jekyll建立博客&lt;/h2&gt;
+&lt;p&gt;先在合适的位置建立一个文件夹，如My_Blog然后cd进入。执行&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;blog-name是自己随意起的名字。执行后会出现一个blog-name的文件夹,cd进入后运行&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;现在就可以用浏览器打开 http://localhost:4000/ 以查看&lt;a href=&quot;http://localhost:4000/&quot;&gt;自己的博客&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;步骤四将本地的博客上传到github&quot;&gt;步骤四：将本地的博客上传到GitHub&lt;/h2&gt;
+&lt;p&gt;这一步可以按照&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages的官网&lt;/a&gt;按照步骤操作。&lt;/p&gt;
+
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+&lt;p&gt;现在终于搭建好了博客，那么应该怎样修改网页或发文章呢？要改变网页的title和about等信息可以
+修改blog-name下的_config.yml和about.md。发表的文章应当用markdown写，然后放在_posts目录下。
+写好文章后最好先在本地确认好后，再提交到GitHub上。关于Git和GitHub的使用，可以参考Udacity的课程&lt;a href=&quot;https://cn.udacity.com/courses/all&quot;&gt;如何使用Git和GitHub&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">一直以来都想建立一个博客，但一拖再拖，现在我终于用jekyll和GitHub Pages搭起了自己的博客。 现在对大概的流程做一个记录，虽然不太会有人来看…</summary></entry><entry><title type="html">Finally! I got me a blog.</title><link href="http://localhost:4000/log/2017/02/21/Finally-I-got-me-a-blog.html" rel="alternate" type="text/html" title="Finally! I got me a blog." /><published>2017-02-21T20:37:20+08:00</published><updated>2017-02-21T20:37:20+08:00</updated><id>http://localhost:4000/log/2017/02/21/Finally-I-got-me-a-blog</id><content type="html" xml:base="http://localhost:4000/log/2017/02/21/Finally-I-got-me-a-blog.html">&lt;p&gt;Hello, ざわーるど&lt;/p&gt;</content><author><name></name></author><summary type="html">Hello, ざわーるど</summary></entry></feed>

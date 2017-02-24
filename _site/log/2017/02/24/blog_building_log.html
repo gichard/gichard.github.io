@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>博客搭建流程</title>
+  <meta name="description" content="一直以来都想建立一个博客，但一拖再拖，现在我终于用jekyll和GitHub Pages搭起了自己的博客。 现在对大概的流程做一个记录，虽然不太会有人来看…">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/log/2017/02/24/blog_building_log.html">
+  <link rel="alternate" type="application/rss+xml" title="chaospace" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">chaospace</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">博客搭建流程</h1>
+    <p class="post-meta"><time datetime="2017-02-24T12:55:27+08:00" itemprop="datePublished">Feb 24, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>一直以来都想建立一个博客，但一拖再拖，现在我终于用jekyll和GitHub Pages搭起了自己的博客。
+现在对大概的流程做一个记录，虽然不太会有人来看…</p>
+
+<p>搭建流程主要参考了<a href="http://helldwellercn.github.io/20150910/jekyll/">使用 Jekyll 和 Github Pages 搭建博客</a>这篇文章</p>
+
+<h2 id="步骤一安装ruby">步骤一：安装Ruby</h2>
+<p>前往<a href="http://rubyinstaller.org/downloads/">Ruby的官网</a>下载Ruby和Ruby DevKit安装包.
+然后安装Ruby，记得 勾上“Add Ruby executables to your PATH” 以省去配置环境变量。然后
+解压Ruby DevKit,在CMD中cd到该目录，执行</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="n">dk</span><span class="p">.</span><span class="nf">rb</span> <span class="n">init</span>
+<span class="n">ruby</span> <span class="n">dk</span><span class="p">.</span><span class="nf">rb</span> <span class="n">install</span></code></pre></figure>
+
+<h2 id="步骤二安装jekyll">步骤二：安装Jekyll</h2>
+<p>执行</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span></code></pre></figure>
+
+<p>可能需要更换安装源，但我并没有遇到这样的问题
+更换方式如下：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">sources</span> <span class="o">--</span><span class="n">remove</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="p">.</span><span class="nf">org</span><span class="o">/</span>
+<span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">a</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">ruby</span><span class="p">.</span><span class="nf">taobao</span><span class="p">.</span><span class="nf">org</span><span class="o">/</span>
+<span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">l</span></code></pre></figure>
+
+<p>这样可以换成淘宝的源。</p>
+
+<h2 id="步骤三用jekyll建立博客">步骤三：用Jekyll建立博客</h2>
+<p>先在合适的位置建立一个文件夹，如My_Blog然后cd进入。执行</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">jekyll</span> <span class="kp">new</span> <span class="n">blog</span><span class="o">-</span><span class="nb">name</span></code></pre></figure>
+
+<p>blog-name是自己随意起的名字。执行后会出现一个blog-name的文件夹,cd进入后运行</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">jekyll</span> <span class="n">serve</span></code></pre></figure>
+
+<p>现在就可以用浏览器打开 http://localhost:4000/ 以查看<a href="http://localhost:4000/">自己的博客</a></p>
+
+<h2 id="步骤四将本地的博客上传到github">步骤四：将本地的博客上传到GitHub</h2>
+<p>这一步可以按照<a href="https://pages.github.com/">GitHub Pages的官网</a>按照步骤操作。</p>
+
+<h2 id="后记">后记</h2>
+<p>现在终于搭建好了博客，那么应该怎样修改网页或发文章呢？要改变网页的title和about等信息可以
+修改blog-name下的_config.yml和about.md。发表的文章应当用markdown写，然后放在_posts目录下。
+写好文章后最好先在本地确认好后，再提交到GitHub上。关于Git和GitHub的使用，可以参考Udacity的课程<a href="https://cn.udacity.com/courses/all">如何使用Git和GitHub</a></p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">chaospace</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              chaospace
+            
+            </li>
+            
+            <li><a href="mailto:norepick艾特壹陆叁dotcom">norepick艾特壹陆叁dotcom</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/gichard"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">gichard</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Chaospace is chaotic.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
